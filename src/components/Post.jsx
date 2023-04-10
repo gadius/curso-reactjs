@@ -1,7 +1,7 @@
-function Post(){
+function Post(props){
     return <div>   
-        <h1>Post</h1>
-        <p>Post content</p>
+        <h1>{props.author}</h1>
+        <p>{props.body}</p>
     </div>
 }
 
