@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Post from "./Post";
 import NewPost from "./NewPost";
+import Modal from "./Modal";
 
 function PostList(props) {
   const [enteredBody, setEnteredBody] = useState(""); //Only useState[0] & useState[1] are valid, nothing more, nothing less.
@@ -18,10 +19,12 @@ function PostList(props) {
 
   return (
     <>
-      <NewPost
-        onBodyChange={bodyChangeHandler}
-        onAuthorChange={authorChangeHandler}
-      />
+        <Modal>
+            <NewPost
+                onBodyChange={bodyChangeHandler}
+                onAuthorChange={authorChangeHandler}
+            />
+        </Modal>
       <ul>
         <Post author={enteredAuthor} body={enteredBody} />
         <Post author="test2" body="test msj2" />
